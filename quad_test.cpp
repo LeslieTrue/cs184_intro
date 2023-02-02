@@ -19,6 +19,13 @@ unsigned int texture;
  */
 Vector3D mult(Matrix3x3 mat, Vector3D input) {
     /* TODO */
+    Vector3D temp;
+    for (int i = 0 ; i < 3 ; ++i){
+        temp[i] = mat[0][i]*input[0] + mat[1][i] * input[1] + mat[2][i] * input[2];
+    }
+    for (int i = 0 ; i < 3 ; ++i){
+        input[i] = temp[i];
+    }
     return input;
 }
 
